@@ -14,6 +14,8 @@ public class Main {
         String num1 = a[0];
         String oper = a[1];
         String num2 = a[2];
+
+
         String num1type;
         if (Character.isDigit(num1.charAt(0))){
             num1type = "arab";
@@ -35,6 +37,14 @@ public class Main {
         }
         int num1Iteger = Integer.valueOf(num1);
         int num2Iteger = Integer.valueOf(num2);
+            if (num1Iteger > 10
+                    || num2Iteger > 10
+                    || num1Iteger < 0
+                    || num2Iteger < 0){
+                throw new RuntimeException();
+            }
+
+
 
         int result = Switch.calculated(num1Iteger, num2Iteger, oper);
         String result2;
@@ -45,4 +55,7 @@ public class Main {
         }
         System.out.println(result2);
     }
-}
+
+
+    }
+
